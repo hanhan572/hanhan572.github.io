@@ -12,7 +12,7 @@ title                    : "Yihan Wang"
 title_separator          : "-"
 name                     : &name "Yihan Wang"
 description              : &description "Applied Math & CS student at DKU / Duke University"
-url                      : https://hanhan.qqgjyx.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://yihanwang.qqgjyx.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "hanhan572/hanhan572.github.io"
 
