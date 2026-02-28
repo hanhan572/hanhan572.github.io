@@ -1,36 +1,43 @@
 ---
-layout: archive
+layout: homepage
 title: "Publications"
 permalink: /publications/
-author_profile: true
+author_profile: false
+redirect_from:
+  - /publications.html
 ---
-
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+<p class="hp-note" lang="en">
+  <sup>&dagger;</sup> denotes equal contribution.
+  You can also find my articles on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.
+</p>
+<p class="hp-note" lang="zh">
+  <sup>&dagger;</sup> 表示同等贡献。
+  您也可以在 <a href="{{ site.author.googlescholar }}">Google Scholar</a> 上查看我的文章。
+</p>
 
-
-
+{% assign sorted_pubs = site.publications | sort: "date" | reverse %}
+{% for pub in sorted_pubs %}
+<div class="hp-pub" id="{{ pub.anchor }}">
+  <h3 class="hp-pub-title">{{ pub.title }}</h3>
+  <p class="hp-pub-authors">{{ pub.display_authors }}</p>
+  <p class="hp-pub-venue" lang="en">
+    <em>{{ pub.venue }}</em>, {{ pub.date | date: "%Y" }}
+    {% if pub.award %}<br><strong class="hp-pub-award">{{ pub.award }}</strong>{% endif %}
+  </p>
+  <p class="hp-pub-venue" lang="zh">
+    <em>{{ pub.venue_zh | default: pub.venue }}</em>，{{ pub.date | date: "%Y" }}
+    {% if pub.award_zh %}<br><strong class="hp-pub-award">{{ pub.award_zh }}</strong>{% elsif pub.award %}<br><strong class="hp-pub-award">{{ pub.award }}</strong>{% endif %}
+  </p>
+  <p class="hp-pub-links">
+    {% assign sep = "" %}
+    {% if pub.paperurl %}<a href="{{ pub.paperurl }}">paper</a>{% assign sep = " / " %}{% endif %}
+    {% if pub.arxivurl %}{{ sep }}<a href="{{ pub.arxivurl }}">arXiv</a>{% assign sep = " / " %}{% endif %}
+    {% if pub.posterurl %}{{ sep }}<a href="{{ pub.posterurl }}">poster</a>{% assign sep = " / " %}{% endif %}
+    {% if pub.slidesurl %}{{ sep }}<a href="{{ pub.slidesurl }}">slides</a>{% assign sep = " / " %}{% endif %}
+    {% if pub.codeurl %}{{ sep }}<a href="{{ pub.codeurl }}">code</a>{% endif %}
+  </p>
+</div>
+{% endfor %}
