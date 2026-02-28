@@ -1,0 +1,193 @@
+---
+layout: homepage
+permalink: /
+title: ""
+author_profile: false
+excerpt: "Yihan Wang — Applied Mathematics & Computational Science student at Duke Kunshan University & Duke University. Research in quantitative finance and NLP-driven financial analytics."
+redirect_from:
+  - /about/
+  - /about.html
+---
+
+{% include base_path %}
+
+<h1 class="hp-name">Yihan Wang</h1>
+
+<div class="hp-profile">
+  <div class="hp-photo-col">
+    <img class="hp-photo" src="{{ base_path }}/images/profile.webp" alt="Yihan Wang">
+    <p class="hp-links">
+      <a href="{{ base_path }}/files/resume.pdf">CV</a> /
+      <a href="{{ site.author.googlescholar }}">Google Scholar</a> /
+      <a href="https://github.com/hanhan572">GitHub</a> /
+      <a href="mailto:yihan.wang@dukekunshan.edu.cn">Email</a> /
+      <a href="https://linkedin.com/in/wang-yihan-a1472a328">LinkedIn</a>
+    </p>
+  </div>
+  <div class="hp-bio-col">
+    <p lang="en">Hi there! I am Yihan Wang, completing my B.S. in Applied Mathematics &amp;
+    Computational Sciences (Mathematics Track) at
+    <a href="https://www.dukekunshan.edu.cn">Duke Kunshan University</a> &amp;
+    <a href="https://duke.edu">Duke University</a> (May 2026),
+    where I am advised by
+    <a href="https://scholars.duke.edu/person/david.ye">Prof. David Ye</a> and
+    <a href="https://faculty.dukekunshan.edu.cn/faculty_profiles/shixin-xu">Prof. Shixin Xu</a>.</p>
+
+    <p lang="zh">你好！我是王一涵，就读于
+    <a href="https://www.dukekunshan.edu.cn">昆山杜克大学</a>与
+    <a href="https://duke.edu">杜克大学</a>，
+    主修应用数学与计算科学（数学方向），预计2026年5月毕业。
+    我的导师为
+    <a href="https://scholars.duke.edu/person/david.ye">叶大卫教授</a>和
+    <a href="https://faculty.dukekunshan.edu.cn/faculty_profiles/shixin-xu">徐士鑫教授</a>。</p>
+
+    <p lang="en">I am broadly interested in quantitative finance, NLP-driven financial analytics,
+    and applied machine learning — with a particular focus on LLM-based sentiment analysis
+    and data-driven investment strategies.
+    Feel free to reach out if you have shared research interests!</p>
+
+    <p lang="zh">我的研究兴趣涵盖量化金融、NLP驱动的金融分析与应用机器学习，
+    尤其关注基于大语言模型的情感分析及数据驱动的投资策略。
+    如果您有相关的研究兴趣，欢迎联系！</p>
+  </div>
+</div>
+
+<hr class="hp-divider">
+
+<div class="hp-section">
+  <h2 class="hp-section-heading" lang="en">News</h2>
+  <h2 class="hp-section-heading" lang="zh">新闻动态</h2>
+  <ul class="hp-news" lang="en">
+    <li>[Nov, 2025] <a href="{{ base_path }}/publications/#infantconfig">Brain-Inspired Configurations</a> has been selected for <strong class="hp-pub-award">Oral Presentation</strong> at BICS 2025.</li>
+    <li>[Jul, 2025] <a href="{{ base_path }}/publications/#lk99">TempLK99</a> is presented at the 17th International Conference on Materials Chemistry (MC17).</li>
+    <li>[May, 2025] Started internship at <a href="https://www.gtfund.com/">Guotai Fund</a>, Quantitative Investment Department.</li>
+    <li>[Jul, 2023] Started internship at <a href="https://www.htsc.com.cn/">Huatai Securities</a>, Securities Investment Department.</li>
+    <li>[Jun, 2023] Started internship at <a href="https://www.bankofchina.com/">Bank of China</a> (Jiangsu Branch), Financial Markets Department.</li>
+  </ul>
+  <ul class="hp-news" lang="zh">
+    <li>[2025年11月] <a href="{{ base_path }}/publications/#infantconfig">Brain-Inspired Configurations</a> 入选 BICS 2025 <strong class="hp-pub-award">口头报告</strong>。</li>
+    <li>[2025年7月] <a href="{{ base_path }}/publications/#lk99">TempLK99</a> 于第17届国际材料化学会议（MC17）上展示。</li>
+    <li>[2025年5月] 进入<a href="https://www.gtfund.com/">国泰基金</a>量化投资部实习。</li>
+    <li>[2023年7月] 进入<a href="https://www.htsc.com.cn/">华泰证券</a>证券投资部实习。</li>
+    <li>[2023年6月] 进入<a href="https://www.bankofchina.com/">中国银行</a>（江苏省分行）金融市场部实习。</li>
+  </ul>
+</div>
+
+<hr class="hp-divider">
+
+<div class="hp-section">
+  <h2 class="hp-section-heading" lang="en">Selected Publications</h2>
+  <h2 class="hp-section-heading" lang="zh">精选论文</h2>
+  <p class="hp-note"><sup>&dagger;</sup> <span lang="en">denotes equal contribution; only first and co-first authored papers are listed</span><span lang="zh">表示同等贡献；仅列出第一作者及共同第一作者论文</span></p>
+  {% assign featured_pubs = site.publications | where: "featured", true | sort: "date" | reverse %}
+  {% for pub in featured_pubs %}
+  <div class="hp-pub">
+    <h3 class="hp-pub-title">
+      <a href="{{ base_path }}/publications/#{{ pub.anchor }}">{{ pub.title }}</a>
+    </h3>
+    <p class="hp-pub-authors">{{ pub.display_authors }}</p>
+    <p class="hp-pub-venue" lang="en">
+      <em>{{ pub.venue }}</em>, {{ pub.date | date: "%Y" }}
+      {% if pub.award %}<br><strong class="hp-pub-award">{{ pub.award }}</strong>{% endif %}
+    </p>
+    <p class="hp-pub-venue" lang="zh">
+      <em>{{ pub.venue_zh | default: pub.venue }}</em>，{{ pub.date | date: "%Y" }}
+      {% if pub.award_zh %}<br><strong class="hp-pub-award">{{ pub.award_zh }}</strong>{% elsif pub.award %}<br><strong class="hp-pub-award">{{ pub.award }}</strong>{% endif %}
+    </p>
+    <p class="hp-pub-links">
+      {% assign sep = "" %}
+      {% if pub.paperurl %}<a href="{{ pub.paperurl }}">paper</a>{% assign sep = " / " %}{% endif %}
+      {% if pub.arxivurl %}{{ sep }}<a href="{{ pub.arxivurl }}">arXiv</a>{% assign sep = " / " %}{% endif %}
+      {% if pub.posterurl %}{{ sep }}<a href="{{ pub.posterurl }}">poster</a>{% assign sep = " / " %}{% endif %}
+      {% if pub.slidesurl %}{{ sep }}<a href="{{ pub.slidesurl }}">slides</a>{% assign sep = " / " %}{% endif %}
+      {% if pub.codeurl %}{{ sep }}<a href="{{ pub.codeurl }}">code</a>{% endif %}
+    </p>
+  </div>
+  {% endfor %}
+</div>
+
+<hr class="hp-divider">
+
+<div class="hp-section">
+  <h2 class="hp-section-heading" lang="en">Education</h2>
+  <h2 class="hp-section-heading" lang="zh">教育经历</h2>
+  <div class="hp-edu-row">
+    <div class="hp-edu-logo">
+      <img src="{{ base_path }}/images/edu/duke-logo.png" alt="Duke University Logo">
+    </div>
+    <div class="hp-edu-info">
+      <strong><a href="https://duke.edu">Duke University</a></strong><br>
+      <span lang="en">B.S. in Interdisciplinary Science (2022 &ndash; 2026)</span>
+      <span lang="zh">交叉科学理学学士（2022 &ndash; 2026）</span>
+    </div>
+  </div>
+  <div class="hp-edu-row">
+    <div class="hp-edu-logo">
+      <img src="{{ base_path }}/images/edu/dku-logo.png" alt="Duke Kunshan University Logo">
+    </div>
+    <div class="hp-edu-info">
+      <strong><a href="https://www.dukekunshan.edu.cn"><span lang="en">Duke Kunshan University</span><span lang="zh">昆山杜克大学</span></a></strong><br>
+      <span lang="en">B.S. in Applied Math &amp; Computational Science, Math Track (2022 &ndash; 2026)</span>
+      <span lang="zh">应用数学与计算科学理学学士，数学方向（2022 &ndash; 2026）</span>
+    </div>
+  </div>
+</div>
+
+<hr class="hp-divider">
+
+<div class="hp-section">
+  <h2 class="hp-section-heading" lang="en">Work Experience</h2>
+  <h2 class="hp-section-heading" lang="zh">工作经历</h2>
+  <div class="hp-work-row">
+    <div class="hp-work-logo">
+      <img src="{{ base_path }}/images/work/guotaifund-logo.png" alt="Guotai Fund Logo">
+    </div>
+    <div class="hp-work-info">
+      <strong><a href="https://www.gtfund.com/"><span lang="en">Guotai Fund</span><span lang="zh">国泰基金（上海总部）</span></a></strong><br>
+      <span lang="en">Quantitative Investment Intern (2025.5 &ndash; 2025.7)</span>
+      <span lang="zh">量化投资实习生（2025.5 &ndash; 2025.7）</span><br>
+      <span lang="en">Shanghai, China</span><span lang="zh">中国上海</span>
+    </div>
+  </div>
+  <div class="hp-work-row">
+    <div class="hp-work-logo">
+      <img src="{{ base_path }}/images/work/huataisecurities-logo.png" alt="Huatai Securities Logo">
+    </div>
+    <div class="hp-work-info">
+      <strong><a href="https://www.htsc.com.cn/"><span lang="en">Huatai Securities</span><span lang="zh">华泰证券</span></a></strong><br>
+      <span lang="en">Business Assistant, Intern (2023.7 &ndash; 2023.8)</span>
+      <span lang="zh">业务助理实习生（2023.7 &ndash; 2023.8）</span><br>
+      <span lang="en">Nanjing, China</span><span lang="zh">中国南京</span>
+    </div>
+  </div>
+  <div class="hp-work-row">
+    <div class="hp-work-logo">
+      <img src="{{ base_path }}/images/work/bankofchina-logo.png" alt="Bank of China Logo">
+    </div>
+    <div class="hp-work-info">
+      <strong><a href="https://www.bankofchina.com/"><span lang="en">Bank of China (Jiangsu Branch)</span><span lang="zh">中国银行（江苏省分行）</span></a></strong><br>
+      <span lang="en">Assistant Product Manager, Intern (2023.6 &ndash; 2023.7)</span>
+      <span lang="zh">助理产品经理实习生（2023.6 &ndash; 2023.7）</span><br>
+      <span lang="en">Nanjing, China</span><span lang="zh">中国南京</span>
+    </div>
+  </div>
+</div>
+
+<hr class="hp-divider">
+
+<div class="hp-section">
+  <h2 class="hp-section-heading" lang="en">Miscellanea</h2>
+  <h2 class="hp-section-heading" lang="zh">杂记</h2>
+  <ul class="hp-list" lang="en">
+    <li>My Chinese name (surname first) is 王一涵 (Wang Yihan).</li>
+    <li>I am from Changzhou, Jiangsu Province in China.</li>
+    <li>I enjoy Bel Canto singing, Kendo, tennis, badminton, volleyball, table tennis, and playing Guzheng (Level 7, Shanghai Conservatory of Music).</li>
+  </ul>
+  <ul class="hp-list" lang="zh">
+    <li>我的中文名（姓在前）为王一涵。</li>
+    <li>我来自中国江苏省常州市。</li>
+    <li>我喜欢美声演唱、剑道、网球、羽毛球、排球、乒乓球，以及弹奏古筝（上海音乐学院七级）。</li>
+  </ul>
+</div>
+
+<hr class="hp-divider">

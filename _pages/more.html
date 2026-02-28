@@ -1,0 +1,76 @@
+---
+layout: homepage
+title: "More"
+permalink: /more/
+author_profile: false
+---
+
+{% include base_path %}
+
+<h2 class="hp-section-heading" lang="en">Teaching</h2>
+<h2 class="hp-section-heading" lang="zh">教学经历</h2>
+{% assign sorted_teaching = site.teaching | sort: "dateC" | reverse %}
+<ul class="hp-list" lang="en">
+  {% for ta in sorted_teaching %}
+  <li><strong>{{ ta.title }}</strong> &mdash; {{ ta.type }} for {{ ta.dateC }}<br>
+  <em>{{ ta.location }}</em><br>
+  {{ ta.content | strip_html | strip }}</li>
+  {% endfor %}
+</ul>
+<ul class="hp-list" lang="zh">
+  {% for ta in sorted_teaching %}
+  <li><strong>{{ ta.title_zh | default: ta.title }}</strong> &mdash; {{ ta.type_zh | default: ta.type }}，{{ ta.dateC_zh | default: ta.dateC }}<br>
+  <em>{{ ta.location_zh | default: ta.location }}</em><br>
+  {{ ta.description_zh | default: ta.content | strip_html | strip }}</li>
+  {% endfor %}
+</ul>
+
+<hr class="hp-divider">
+
+<h2 class="hp-section-heading" lang="en">Honors & Awards</h2>
+<h2 class="hp-section-heading" lang="zh">荣誉与奖项</h2>
+<ul class="hp-list" lang="en">
+  <li>Merit-based Scholarship (RMB 170,000)</li>
+  <li>Dean's List, Spring 2023</li>
+</ul>
+<ul class="hp-list" lang="zh">
+  <li>优秀奖学金（人民币170,000元）</li>
+  <li>院长嘉许名单，2023年春季</li>
+</ul>
+
+<hr class="hp-divider">
+
+<h2 class="hp-section-heading" lang="en">Service & Leadership</h2>
+<h2 class="hp-section-heading" lang="zh">服务与领导</h2>
+<ul class="hp-list" lang="en">
+  <li>Resident Assistant, DKU Residence Life (Aug 2025&ndash;Present)</li>
+  <li>Communications Coordinator, Duke House Council (Aug&ndash;Dec 2024)</li>
+  <li>Kunshan Student Orientation Peer (Aug&ndash;Dec 2024)</li>
+  <li>Organizer, DKU ParkRun (Apr 2023&ndash;Apr 2024)</li>
+  <li>Orientation Leader, DKU First Year Experience (Aug&ndash;Oct 2023)</li>
+</ul>
+<ul class="hp-list" lang="zh">
+  <li>宿舍助理，昆山杜克大学宿舍管理部（2025年8月至今）</li>
+  <li>通讯协调员，杜克大学宿舍委员会（2024年8月&ndash;12月）</li>
+  <li>昆山校区迎新朋辈导师（2024年8月&ndash;12月）</li>
+  <li>组织者，昆山杜克大学 ParkRun（2023年4月&ndash;2024年4月）</li>
+  <li>迎新组长，昆山杜克大学新生体验项目（2023年8月&ndash;10月）</li>
+</ul>
+
+<hr class="hp-divider">
+
+<h2 class="hp-section-heading" lang="en">Skills</h2>
+<h2 class="hp-section-heading" lang="zh">技能</h2>
+<ul class="hp-list">
+  <li><strong><span lang="en">Tools:</span><span lang="zh">工具：</span></strong> Bloomberg Terminal, Python, MATLAB, Origin, LaTeX, Git, Bash/Unix Shell</li>
+  <li><strong><span lang="en">Lab Techniques:</span><span lang="zh">实验技术：</span></strong> Raman Spectroscopy, X-Ray Diffraction (XRD)</li>
+</ul>
+
+<hr class="hp-divider">
+
+<h2 class="hp-section-heading" lang="en">Languages</h2>
+<h2 class="hp-section-heading" lang="zh">语言能力</h2>
+<ul class="hp-list">
+  <li><span lang="en">English (fluent)</span><span lang="zh">英语（流利）</span></li>
+  <li><span lang="en">Mandarin (native)</span><span lang="zh">普通话（母语）</span></li>
+</ul>
