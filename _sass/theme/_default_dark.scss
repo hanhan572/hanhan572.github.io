@@ -65,5 +65,9 @@ html[data-theme="dark"] {
     --global-navbar-active-bg           : rgba(255, 255, 255, 0.12);
     --global-navbar-active-border       : #fff;
     --global-navbar-border-bottom       : rgba(255, 255, 255, 0.1);
+
+    /* Highlighted publication card + banner background */
+    --hp-highlight-bg                   : #3a3418;
+    --hp-highlight-border               : #6b5e23;
 }
 

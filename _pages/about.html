@@ -11,6 +11,19 @@ redirect_from:
 
 {% include base_path %}
 
+{% assign banner_until = "2026-04-25" | date: "%Y-%m-%d" %}
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% if today <= banner_until %}
+<aside class="hp-banner" role="note">
+  <span class="hp-banner-tag" lang="en">Apr 17 · Now</span>
+  <span class="hp-banner-tag" lang="zh">4月17日 · 现在</span>
+  <span class="hp-banner-msg" lang="en">Welcome from the SignatureWork poster session</span>
+  <span class="hp-banner-msg" lang="zh">欢迎来自毕业课题海报展的访客</span>
+  <a class="hp-banner-cta" href="#swfed" lang="en">Jump to FinBERT-Fed <span aria-hidden="true">↓</span></a>
+  <a class="hp-banner-cta" href="#swfed" lang="zh">前往 FinBERT-Fed <span aria-hidden="true">↓</span></a>
+</aside>
+{% endif %}
+
 <h1 class="hp-name">Yihan Wang</h1>
 
 <div class="hp-profile">
@@ -58,6 +71,7 @@ redirect_from:
   <h2 class="hp-section-heading" lang="en">News</h2>
   <h2 class="hp-section-heading" lang="zh">新闻动态</h2>
   <ul class="hp-news" lang="en">
+    <li>[Apr, 2026] <a href="{{ base_path }}/publications/#swfed">FinBERT-Fed</a> presented at the <strong>DKU Signature Work Symposium 2026</strong>.</li>
     <li>[Nov, 2025] <a href="{{ base_path }}/publications/#infantconfig">Brain-Inspired Configurations</a> has been selected for <strong class="hp-pub-award">Oral Presentation</strong> at BICS 2025.</li>
     <li>[Jul, 2025] <a href="{{ base_path }}/publications/#lk99">TempLK99</a> is presented at the 17th International Conference on Materials Chemistry (MC17).</li>
     <li>[May, 2025] Started internship at <a href="https://www.gtfund.com/">Guotai Fund</a>, Quantitative Investment Department.</li>
@@ -65,6 +79,7 @@ redirect_from:
     <li>[Jun, 2023] Started internship at <a href="https://www.bankofchina.com/">Bank of China</a> (Jiangsu Branch), Financial Markets Department.</li>
   </ul>
   <ul class="hp-news" lang="zh">
+    <li>[2026年4月] <a href="{{ base_path }}/publications/#swfed">FinBERT-Fed</a> 于 <strong>昆山杜克大学毕业课题研讨会 2026</strong> 上展示。</li>
     <li>[2025年11月] <a href="{{ base_path }}/publications/#infantconfig">Brain-Inspired Configurations</a> 入选 BICS 2025 <strong class="hp-pub-award">口头报告</strong>。</li>
     <li>[2025年7月] <a href="{{ base_path }}/publications/#lk99">TempLK99</a> 于第17届国际材料化学会议（MC17）上展示。</li>
     <li>[2025年5月] 进入<a href="https://www.gtfund.com/">国泰基金</a>量化投资部实习。</li>
@@ -81,7 +96,7 @@ redirect_from:
   <p class="hp-note"><sup>&dagger;</sup> <span lang="en">denotes equal contribution; only first and co-first authored papers are listed</span><span lang="zh">表示同等贡献；仅列出第一作者及共同第一作者论文</span></p>
   {% assign featured_pubs = site.publications | where: "featured", true | sort: "date" | reverse %}
   {% for pub in featured_pubs %}
-  <div class="hp-pub">
+  <div class="hp-pub{% if pub.highlighted %} hp-pub--highlight{% endif %}" id="{{ pub.anchor }}">
     <h3 class="hp-pub-title">
       <a href="{{ base_path }}/publications/#{{ pub.anchor }}">{{ pub.title }}</a>
     </h3>
