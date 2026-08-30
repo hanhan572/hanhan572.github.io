@@ -10,6 +10,53 @@ redirect_from:
 {% include base_path %}
 
 <div class="hp-pub">
+  <h3 class="hp-pub-title" lang="en">FinBERT-Fed: Sentiment and Macro Factors around Federal Reserve Events</h3>
+  <h3 class="hp-pub-title" lang="zh">FinBERT-Fed：美联储事件窗口下的情感与宏观因子</h3>
+  <p class="hp-pub-authors" lang="en">
+    Signature Work, advised by <a href="https://faculty.dukekunshan.edu.cn/faculty_profiles/shixin-xu">Prof. Shixin Xu</a>, Duke Kunshan University
+  </p>
+  <p class="hp-pub-authors" lang="zh">
+    毕业课题（Signature Work），指导教师：<a href="https://faculty.dukekunshan.edu.cn/faculty_profiles/shixin-xu">徐士鑫教授</a>，昆山杜克大学
+  </p>
+  <p class="hp-pub-venue" lang="en">
+    Combined FinBERT sentiment scores with macroeconomic factors to predict cross-sectional
+    stock returns around Federal Reserve announcements.
+  </p>
+  <p class="hp-pub-venue" lang="zh">
+    将 FinBERT 情感得分与宏观经济因子相结合，预测美联储公告前后的股票横截面收益。
+  </p>
+  <p class="hp-pub-links">
+    <a href="{{ base_path }}/files/p01-SW2026-FinBERT-Fed-paper.pdf">paper</a> /
+    <a href="{{ base_path }}/files/p01-SW2026-FinBERT-Fed-poster.pdf">poster</a>
+  </p>
+</div>
+
+<div class="hp-pub">
+  <h3 class="hp-pub-title" lang="en">Temperature-Induced Phase Transitions in LK99</h3>
+  <h3 class="hp-pub-title" lang="zh">LK99 的温度诱导相变研究</h3>
+  <p class="hp-pub-authors" lang="en">
+    First author; RINDSTU 393 independent study, supervised by Prof. Xiawa Wang, Duke Kunshan University
+  </p>
+  <p class="hp-pub-authors" lang="zh">
+    第一作者；RINDSTU 393 独立研究，指导教师：王霞蔚教授，昆山杜克大学
+  </p>
+  <p class="hp-pub-venue" lang="en">
+    Synthesized Li<sub>3</sub>Re<sub>3</sub>Te<sub>2</sub>O<sub>12</sub> and
+    Pb<sub>9</sub>Cu(PO<sub>4</sub>)<sub>6</sub>O samples and characterized them by Raman
+    spectroscopy, XRD, resistivity testing, DSC, and DFT calculations. Presented at MC17.
+  </p>
+  <p class="hp-pub-venue" lang="zh">
+    合成 Li<sub>3</sub>Re<sub>3</sub>Te<sub>2</sub>O<sub>12</sub> 与
+    Pb<sub>9</sub>Cu(PO<sub>4</sub>)<sub>6</sub>O 样品，并通过拉曼光谱、XRD、电阻率测试、
+    DSC 及 DFT 计算进行表征。成果于 MC17 会议展示。
+  </p>
+  <p class="hp-pub-links">
+    <a href="{{ base_path }}/publications/#lk99">details</a> /
+    <a href="https://online.flippingbook.com/view/299339187/111/">paper</a>
+  </p>
+</div>
+
+<div class="hp-pub">
   <h3 class="hp-pub-title" lang="en">LLM-based Sentiment Analysis in Finance</h3>
   <h3 class="hp-pub-title" lang="zh">基于大语言模型的金融情感分析</h3>
   <p class="hp-pub-authors" lang="en">
@@ -21,24 +68,28 @@ redirect_from:
   <p class="hp-pub-venue" lang="en">
     Built an end-to-end real-time pipeline for news sentiment analysis.
     Compared ChatGPT vs FinBERT vs BERT on streaming financial news for
-    stock prediction tasks.
+    stock prediction tasks, with model endpoints deployed on AWS.
   </p>
   <p class="hp-pub-venue" lang="zh">
     构建了端到端实时新闻情感分析流水线，对比 ChatGPT、FinBERT 和 BERT
-    在流式金融新闻上的股票预测表现。
+    在流式金融新闻上的股票预测表现，并将模型端点部署于 AWS。
   </p>
 </div>
+
+<h2 class="hp-section-heading" lang="en">Tools I Contribute To</h2>
+<h2 class="hp-section-heading" lang="zh">参与的开源工具</h2>
 
 <div class="hp-pub">
   <h3 class="hp-pub-title">mheatmap</h3>
   <p class="hp-pub-authors" lang="en">
-    A Python package for advanced heatmap visualization and matrix analysis, featuring
-    mosaic/proportional heatmaps, confusion matrix post-processing, and spectral reordering.
+    Python package for proportional heatmap visualization and spectral reordering, developed by
+    <a href="https://www.qqgjyx.com">Juntang Wang</a>. I use it in our joint configuration work
+    and contributed feedback from the BICS 2025 experiments.
   </p>
   <p class="hp-pub-authors" lang="zh">
-    一个用于高级热图可视化和矩阵分析的 Python 包，支持马赛克/比例热图、混淆矩阵后处理及谱重排序。
+    用于比例热图可视化与谱重排序的 Python 包，由<a href="https://www.qqgjyx.com">王俊棠</a>开发。
+    我在双方合作的 configuration 研究中使用该工具，并基于 BICS 2025 的实验提供了反馈。
   </p>
-  <p class="hp-pub-venue"><strong class="hp-pub-award">680+ GitHub Stars</strong></p>
   <p class="hp-pub-links">
     <a href="https://qqgjyx.github.io/mheatmap/">docs</a> /
     <a href="https://github.com/qqgjyx/mheatmap">code</a> /
@@ -49,10 +100,13 @@ redirect_from:
 <div class="hp-pub">
   <h3 class="hp-pub-title">sgtsnepi</h3>
   <p class="hp-pub-authors" lang="en">
-    A pure Python port of the SG-t-SNE-&Pi; algorithm for embedding sparse graphs into 2D/3D space.
+    Pure Python port of the SG-t-SNE-&Pi; algorithm for embedding sparse graphs into 2D/3D space,
+    developed by <a href="https://www.qqgjyx.com">Juntang Wang</a>. Used for the graph embeddings
+    in our shared research.
   </p>
   <p class="hp-pub-authors" lang="zh">
-    SG-t-SNE-&Pi; 算法的纯 Python 实现，用于将稀疏图嵌入二维/三维空间。
+    SG-t-SNE-&Pi; 算法的纯 Python 实现，用于将稀疏图嵌入二维/三维空间，
+    由<a href="https://www.qqgjyx.com">王俊棠</a>开发。用于双方合作研究中的图嵌入部分。
   </p>
   <p class="hp-pub-links">
     <a href="https://qqgjyx.github.io/sgtsnepi/">docs</a> /
