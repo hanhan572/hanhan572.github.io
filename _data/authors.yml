@@ -1,18 +1,10 @@
 # Authors
+# Only used when a page sets an explicit `author:` key; site-wide details
+# live under `author:` in _config.yml.
 
-Name Name:
-  name        : "Name Name"
-  uri         : "http://name.com"
-  email       : "name@name.com"
-  bio         : "This is the first name."
-  avatar      : "bio-photo-2.jpg"
-  twitter     : "name"
-  google_plus : "Name"
-
-Name2 Name2:
-  name        : "Name2 Name2"
-  email       : "name2@name2.com"
-  bio         : "I ordered what?"
-  avatar      : "bio-photo.jpg"
-  twitter     : "name2"
-  google_plus : "Name"
+Yihan Wang:
+  name        : "Yihan Wang"
+  uri         : "https://yihanwang.qqgjyx.com"
+  email       : "yw572@duke.edu"
+  bio         : "M.S. student in Interdisciplinary Data Science at Duke University."
+  avatar      : "profile.webp"

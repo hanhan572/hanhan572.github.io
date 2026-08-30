@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Yihan Wang"
 title_separator          : "-"
 name                     : &name "Yihan Wang"
-description              : &description "Applied Math & CS student at DKU / Duke University"
+description              : &description "M.S. student in Interdisciplinary Data Science at Duke University"
 url                      : https://yihanwang.qqgjyx.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "hanhan572/hanhan572.github.io"
@@ -24,11 +24,11 @@ author:
   avatar           : "profile.webp"
   name             : "Yihan Wang"
   pronouns         : # example: "she/her"  
-  bio              : "Applied Mathematics and Computational Sciences/Mathematics student at Duke Kunshan University & Duke University"
-  location         : "Kunshan, China / Durham, USA"
+  bio              : "M.S. student in Interdisciplinary Data Science at Duke University; B.S. in Applied Math & Computational Science from Duke Kunshan University & Duke University"
+  location         : "Durham, NC, USA"
   employer         : 
-  uri              : "hanhan.qqgjyx.com"
-  email            : "yihan.wang@dukekunshan.edu.cn" 
+  uri              : "https://yihanwang.qqgjyx.com"
+  email            : "yw572@duke.edu"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
@@ -72,14 +72,6 @@ author:
   zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
-publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
-
 site_theme               : "default"
 
 # Site Settings
@@ -88,33 +80,6 @@ breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false #change to true to add link to talkmap on talks page
-comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
-  disqus:
-    shortname            :
-  discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
-  facebook:
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
-staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" # "master", "gh-pages"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
-  format                 : "yml"
-  moderation             : true
-  path                   : "_data/comments/{options.slug}"
-  requiredFields         : ['name', 'email', 'message']
-  transforms:
-    email                : "md5"
-  generatedFields:
-    date:
-      type               : "date"
-      options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
   hide                   : false     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
@@ -134,7 +99,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/images/profile.webp"  # Open Graph/Twitter default site image
+og_image                 : "og-card.png"  # Open Graph/Twitter default card, resolved under /images/
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -144,12 +109,6 @@ social:
 
 
 # Analytics
-analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
-  google:
-    tracking_id          :
-
-
 # Reading Files
 include:
   - .htaccess
@@ -217,9 +176,6 @@ collections:
   publications:
     output: false
     permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
@@ -260,15 +216,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
-
 
 # Sass/SCSS
 sass:
